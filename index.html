@@ -11,7 +11,12 @@
       <h1>🎱 로또 게임</h1>
       <form id="purchase-amount-form">
         <label for="purchase-amount-input">구입 금액을 입력해 주세요.</label>
-        <input type="text" id="purchase-amount-input" />
+        <input
+          type="number"
+          id="purchase-amount-input"
+          min="1000"
+          step="1000"
+        />
         <button id="purchase-amount-button">확인</button>
       </form>
       <div id="purchased-lotto-container"></div>

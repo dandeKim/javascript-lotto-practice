@@ -1,4 +1,5 @@
 import { hideElement } from "../utils/domUtils.js";
+import PurchaseAmountForm from "./PurchaseAmountForm.js";
 
 class LottoGame {
   constructor() {
@@ -16,7 +17,7 @@ class LottoGame {
       "#last-bonus-number-container"
     );
     this.$lottoGameResultContainer = document.querySelector(
-      "#llotto-game-result"
+      "#lotto-game-result"
     );
   };
 
@@ -25,6 +26,10 @@ class LottoGame {
     hideElement(this.$lastLottoNumberContainer);
     hideElement(this.$lastBonusNumberContainer);
     hideElement(this.$lottoGameResultContainer);
+  };
+
+  createComponents = () => {
+    this.purchaseAmountForm = new PurchaseAmountForm(this.setLottoAmount);
   };
 
   resetState = () => {
@@ -36,10 +41,15 @@ class LottoGame {
     };
   };
 
+  setLottoAmount = amount => {
+    this.state.lottoAmount = amount;
+  };
+
   render = () => {
     this.getDOMElements();
     this.resetDOMElements();
     this.resetState();
+    this.createComponents();
   };
 }
 
