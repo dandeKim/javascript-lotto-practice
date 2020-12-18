@@ -4,10 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🎱 로또 게임</title>
+    <link rel="stylesheet" href="./src/styles.css" />
   </head>
   <body>
     <div id="app">
       <h1>🎱 로또 게임</h1>
+      <form id="purchase-amount-form">
+        <label for="purchase-amount-input">구입 금액을 입력해 주세요.</label>
+        <input type="text" id="purchase-amount-input" />
+        <button id="purchase-amount-button">확인</button>
+      </form>
+      <div id="purchased-lotto-container"></div>
+      <form id="last-lotto-number-container">
+        <label for="last-lotto-number-input"
+          >지난 주 당첨 번호를 입력해 주세요.</label
+        >
+        <input type="text" id="last-lotto-number-input" />
+        <button id="last-lotto-number-button">확인</button>
+      </form>
+      <form id="last-bonus-number-container">
+        <label for="last-bonus-number-input">보너스 볼을 입력해 주세요.</label>
+        <input type="text" id="last-bonus-number-input" />
+        <button id="last-bonus-number-button">확인</button>
+      </form>
+      <div id="lotto-game-result"></div>
     </div>
     <script type="module" src="src/index.js"></script>
   </body>

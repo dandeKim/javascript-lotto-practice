@@ -1,0 +1,21 @@
+label {
+  display: block;
+}
+
+form {
+  padding: 10px 0;
+}
+
+#purchased-lotto-container,
+#last-lotto-number-container,
+#last-bonus-number-container,
+#lotto-game-result {
+  display: none;
+}
+
+#purchased-lotto-container.active,
+#last-lotto-number-container.active,
+#last-bonus-number-container.active,
+#lotto-game-result.active {
+  display: block;
+}
