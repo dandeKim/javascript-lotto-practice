@@ -2,6 +2,7 @@ import PurchaseAmountForm from "./PurchaseAmountForm.js";
 import PurchaseLottoContainer from "./PurchaseLottoContainer.js";
 import LastLottoNumberContainer from "./LastLottoNumberContainer.js";
 import LastBonusNumberContainer from "./LastBonusNumberContainer.js";
+import GameResultContainer from "./GameResultContainer.js";
 
 import { hideElement, showElement } from "../utils/domUtils.js";
 
@@ -46,6 +47,10 @@ class LottoGame {
       this.getLastLottoNumber,
       this.setLastBonusNumber
     );
+    this.gameResultContainer = new GameResultContainer(
+      this.$lottoGameResultContainer,
+      this.getState
+    );
   };
 
   resetState = () => {
@@ -63,6 +68,10 @@ class LottoGame {
 
   getLastLottoNumber = () => {
     return [...this.state.lastLottoNumber];
+  };
+
+  getState = () => {
+    return this.state;
   };
 
   setLottoAmount = amount => {
@@ -87,6 +96,7 @@ class LottoGame {
     this.state.lastBonusNumber = number;
 
     showElement(this.$lottoGameResultContainer);
+    this.gameResultContainer.render();
   };
 
   render = () => {
