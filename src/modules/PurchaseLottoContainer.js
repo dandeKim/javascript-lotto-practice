@@ -20,6 +20,7 @@ class PurchaseLottoContainer {
 
   setLottoLists = () => {
     this.lottoLists = getLottoNumberLists(this.amount);
+    this.setPurchasedLotto(this.lottoLists);
   };
 
   render = () => {

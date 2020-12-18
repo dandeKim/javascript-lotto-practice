@@ -15,7 +15,7 @@ const getLottoNumberLists = amount => {
     lottoSet.add(getRandomNumber());
 
     if (lottoSet.size === NUMBER.TOTAL_LOTTO_LENGTH) {
-      lottoLists.push([...lottoSet]);
+      lottoLists.push([...lottoSet].sort((a, b) => a - b));
       lottoSet.clear();
       amount--;
     }

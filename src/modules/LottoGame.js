@@ -60,7 +60,7 @@ class LottoGame {
   };
 
   setPurchasedLotto = lottoList => {
-    this.state.purchasedLotto.push(lottoList);
+    this.state.purchasedLotto = lottoList;
   };
 
   render = () => {
