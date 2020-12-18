@@ -1,5 +1,6 @@
-import { hideElement } from "../utils/domUtils.js";
 import PurchaseAmountForm from "./PurchaseAmountForm.js";
+import PurchaseLottoContainer from "./PurchaseLottoContainer.js";
+import { hideElement, showElement } from "../utils/domUtils.js";
 
 class LottoGame {
   constructor() {
@@ -30,6 +31,11 @@ class LottoGame {
 
   createComponents = () => {
     this.purchaseAmountForm = new PurchaseAmountForm(this.setLottoAmount);
+    this.purchaseLottoContainer = new PurchaseLottoContainer(
+      this.$purchasedLottoContainer,
+      this.getAmount,
+      this.setPurchasedLotto
+    );
   };
 
   resetState = () => {
@@ -41,6 +47,10 @@ class LottoGame {
     };
   };
 
+  getAmount = () => {
+    return this.state.lottoAmount;
+  };
+
   setLottoAmount = amount => {
     this.state.lottoAmount = amount;
 
@@ -48,6 +58,9 @@ class LottoGame {
     showElement(this.$lastLottoNumberContainer);
     this.purchaseLottoContainer.render();
   };
+
+  setPurchasedLotto = lottoList => {
+    this.state.purchasedLotto.push(lottoList);
   };
 
   render = () => {
