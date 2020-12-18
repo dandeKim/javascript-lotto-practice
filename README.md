@@ -1,5 +1,26 @@
 # 🎱 로또 게임
 
+## 🏗 구조
+
+```sh
+├── README.md
+├── index.html
+└── src
+   ├── modules
+   │   ├── LottoGame.js
+   │   ├── PurchaseLottoContainer.js
+   │   ├── PurchaseAmountForm.js
+   │   ├── LastLottoNumberContainer.js
+   │   ├── LastBonusNumberContainer.js
+   │   └── GameResultContainer.js
+   └── utils
+       ├── constants.js
+       ├── domUtils.js
+       ├── templates.js
+       ├── util.js
+       └── validations.js
+```
+
 ## 🚀 기능 요구사항
 
 - 로또 게임 기능을 구현해야 한다.
