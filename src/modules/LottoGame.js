@@ -27,9 +27,19 @@ class LottoGame {
     hideElement(this.$lottoGameResultContainer);
   };
 
+  resetState = () => {
+    this.state = {
+      lottoAmount: 0,
+      purchasedLotto: [],
+      lastLottoNumber: [],
+      lastBonusNumber: 0,
+    };
+  };
+
   render = () => {
     this.getDOMElements();
     this.resetDOMElements();
+    this.resetState();
   };
 }
 
