@@ -1,4 +1,5 @@
 import { NUMBER } from "../utils/constants.js";
+import { gameResultHTML, gameResultTitleHTML } from "../utils/templates.js";
 import { getLottoResult } from "../utils/util.js";
 
 class GameResultContainer {
@@ -46,10 +47,16 @@ class GameResultContainer {
     });
   };
 
+  printGameResult = () => {
+    this.$lottoGameResultContainer.innerHTML =
+      gameResultTitleHTML() + gameResultHTML(this.result);
+  };
+
   render = () => {
     this.resetResult();
     this.setCurrentState();
     this.setGameResult();
+    this.printGameResult();
   };
 }
 
