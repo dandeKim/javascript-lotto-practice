@@ -3,11 +3,12 @@ const purchasedAmountHTML = amount => {
 };
 
 const lottoNumbersHTML = lottoNumbersArray => {
-  const listHTML = lottoNumbersArray.reduce((list, number) => {
-    return list + `<li>${number}</li>\n`;
-  }, "");
+  const listElements =
+    lottoNumbersArray.reduce((list, number) => {
+      return list + `<li>${number}</li>\n`;
+    }, "<ul>") + "</ul>";
 
-  return listHTML;
+  return listElements;
 };
 
 export { purchasedAmountHTML, lottoNumbersHTML };
