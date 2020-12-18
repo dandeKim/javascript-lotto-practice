@@ -32,4 +32,8 @@ const getLottoResult = (lastLottoNumberList, purchasedLottoList) => {
   return correctNumbers.length;
 };
 
-export { getLottoNumberLists, getLottoResult };
+const getStatisticsResult = (totalPrize, amount) => {
+  return totalPrize / (amount * NUMBER.LOTTO_PRICE);
+};
+
+export { getLottoNumberLists, getLottoResult, getStatisticsResult };
