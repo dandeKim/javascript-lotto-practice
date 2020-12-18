@@ -24,4 +24,12 @@ const getLottoNumberLists = amount => {
   return lottoLists;
 };
 
-export { getLottoNumberLists };
+const getLottoResult = (lastLottoNumberList, purchasedLottoList) => {
+  const correctNumbers = purchasedLottoList.filter(number =>
+    lastLottoNumberList.includes(number)
+  );
+
+  return correctNumbers.length;
+};
+
+export { getLottoNumberLists, getLottoResult };
