@@ -16,4 +16,35 @@ const isVaildPurchaseAmount = ($input, amount) => {
   return isPurchasedMoreThanOne && isVaildAmount;
 };
 
-export { isVaildPurchaseAmount };
+const isUniqueSet = array => {
+  const uniqueSet = new Set(array);
+
+  return array.length === uniqueSet.size;
+};
+
+const isValidLottoNumber = numberList => {
+  const validNumberList = numberList.filter(
+    number =>
+      number >= NUMBER.MIN_LOTTO_NUMBER && number <= NUMBER.MAX_LOTTO_NUMBER
+  );
+
+  return validNumberList.length === numberList.length;
+};
+
+const isValidLastLottoNumbers = ($input, numberList) => {
+  const isUniqueNumberList = isUniqueSet(numberList);
+  const isValidLength = numberList.length === NUMBER.TOTAL_LOTTO_LENGTH;
+  const isValidNumber = isValidLottoNumber(numberList);
+
+  if (!isUniqueNumberList || !isValidLength) {
+    showAlertMessage($input, ALERT.INVALID_LOTTO_LENGTH);
+  }
+
+  if (!isValidNumber) {
+    showAlertMessage($input, ALERT.INVALID_LAST_LOTTO_NUMBER);
+  }
+
+  return isUniqueNumberList && isValidLength && isValidNumber;
+};
+
+export { isVaildPurchaseAmount, isValidLastLottoNumbers };
