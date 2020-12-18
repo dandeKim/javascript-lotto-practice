@@ -1,3 +1,6 @@
+import { NUMBER } from "../utils/constants.js";
+import { getLottoResult } from "../utils/util.js";
+
 class GameResultContainer {
   constructor($lottoGameResultContainer, getState) {
     this.$lottoGameResultContainer = $lottoGameResultContainer;
@@ -26,9 +29,27 @@ class GameResultContainer {
     this.lastBonusNumber = lastBonusNumber;
   };
 
+  setGameResult = () => {
+    this.purchasedLotto.forEach(lottoList => {
+      let matchedNumber = getLottoResult(this.lastLottoNumber, lottoList);
+
+      if (
+        matchedNumber === NUMBER.CHECK_BONUS_NUMBER_STANDARD &&
+        lottoList.includes(this.lastBonusNumber)
+      ) {
+        matchedNumber += NUMBER.MATCHED_BONUS_NUMBER_POINT;
+      }
+
+      if (matchedNumber >= NUMBER.MIN_MATCHED_LENGTH) {
+        this.result[matchedNumber]++;
+      }
+    });
+  };
+
   render = () => {
     this.resetResult();
     this.setCurrentState();
+    this.setGameResult();
   };
 }
 
