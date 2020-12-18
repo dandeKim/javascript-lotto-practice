@@ -1,4 +1,5 @@
 import { purchasedAmountHTML, lottoNumbersHTML } from "../utils/templates.js";
+import { getLottoNumberLists } from "../utils/util.js";
 
 class PurchaseLottoContainer {
   constructor($container, getAmount, setPurchasedLotto) {
@@ -8,11 +9,24 @@ class PurchaseLottoContainer {
   }
 
   printPurchasedAmount = () => {
-    this.$container.innerHTML = purchasedAmountHTML(this.getAmount());
+    this.$container.innerHTML = purchasedAmountHTML(this.amount);
+  };
+
+  printLottoNumbers = () => {
+    this.lottoLists.forEach(lottoList => {
+      this.$container.innerHTML += lottoNumbersHTML(lottoList);
+    });
+  };
+
+  setLottoLists = () => {
+    this.lottoLists = getLottoNumberLists(this.amount);
   };
 
   render = () => {
+    this.amount = this.getAmount();
+    this.setLottoLists();
     this.printPurchasedAmount();
+    this.printLottoNumbers();
   };
 }
 
