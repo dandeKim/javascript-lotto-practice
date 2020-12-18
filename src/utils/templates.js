@@ -1,3 +1,5 @@
+import { NUMBER } from "../utils/constants.js";
+
 const purchasedAmountHTML = amount => {
   return `<p>${amount}개를 구매했습니다.</p>`;
 };
@@ -11,4 +13,25 @@ const lottoNumbersHTML = lottoNumbersArray => {
   return listElements;
 };
 
-export { purchasedAmountHTML, lottoNumbersHTML };
+const gameResultTitleHTML = () => {
+  return `<h3>당첨 통계</h3>`;
+};
+
+const gameResultHTML = resultList => {
+  return `
+    <ul>
+      <li>3개 일치(${NUMBER.THREE_MATCHED_PRIZE}원)- ${resultList[0]}개</li>
+      <li>4개 일치(${NUMBER.FOUR_MATCHED_PRIZE}원)- ${resultList[1]}개</li>
+      <li>5개 일치(${NUMBER.FIVE_MATCHED_PRIZE}원)- ${resultList[2]}개</li>
+      <li>5개 일치, 보너스 볼 일치(${NUMBER.FIVE_MATCHED_AND_BONUS_PRIZE}원)- ${resultList[3]}개</li>
+      <li>6개 일치(${NUMBER.ALL_MATCHED_PRIZE}원)- ${resultList[4]}개</li>
+    </ul>
+  `;
+};
+
+export {
+  purchasedAmountHTML,
+  lottoNumbersHTML,
+  gameResultTitleHTML,
+  gameResultHTML,
+};
