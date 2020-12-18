@@ -17,14 +17,14 @@ const gameResultTitleHTML = () => {
   return `<h3>당첨 통계</h3>`;
 };
 
-const gameResultHTML = resultList => {
+const gameResultHTML = resultObject => {
   return `
     <ul>
-      <li>3개 일치(${NUMBER.THREE_MATCHED_PRIZE}원)- ${resultList[0]}개</li>
-      <li>4개 일치(${NUMBER.FOUR_MATCHED_PRIZE}원)- ${resultList[1]}개</li>
-      <li>5개 일치(${NUMBER.FIVE_MATCHED_PRIZE}원)- ${resultList[2]}개</li>
-      <li>5개 일치, 보너스 볼 일치(${NUMBER.FIVE_MATCHED_AND_BONUS_PRIZE}원)- ${resultList[3]}개</li>
-      <li>6개 일치(${NUMBER.ALL_MATCHED_PRIZE}원)- ${resultList[4]}개</li>
+      <li>3개 일치(${NUMBER.THREE_MATCHED_PRIZE}원)- ${resultObject[3]}개</li>
+      <li>4개 일치(${NUMBER.FOUR_MATCHED_PRIZE}원)- ${resultObject[4]}개</li>
+      <li>5개 일치(${NUMBER.FIVE_MATCHED_PRIZE}원)- ${resultObject[5]}개</li>
+      <li>5개 일치, 보너스 볼 일치(${NUMBER.FIVE_MATCHED_AND_BONUS_PRIZE}원)- ${resultObject[5.5]}개</li>
+      <li>6개 일치(${NUMBER.ALL_MATCHED_PRIZE}원)- ${resultObject[6]}개</li>
     </ul>
   `;
 };
