@@ -29,9 +29,14 @@ const gameResultHTML = resultObject => {
   `;
 };
 
+const getStatisticsHTML = number => {
+  return `총 수익률은 ${number}입니다.`;
+};
+
 export {
   purchasedAmountHTML,
   lottoNumbersHTML,
   gameResultTitleHTML,
   gameResultHTML,
+  getStatisticsHTML,
 };
