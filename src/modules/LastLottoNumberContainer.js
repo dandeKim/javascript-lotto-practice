@@ -17,7 +17,7 @@ class LastLottoNumberContainer {
       return;
     }
 
-    this.setLastLottoNumber(lottoNumbers);
+    this.setLastLottoNumber(lottoNumbers.sort((a, b) => a - b));
   };
 
   render = () => {
