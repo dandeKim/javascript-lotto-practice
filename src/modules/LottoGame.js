@@ -43,6 +43,11 @@ class LottoGame {
 
   setLottoAmount = amount => {
     this.state.lottoAmount = amount;
+
+    showElement(this.$purchasedLottoContainer);
+    showElement(this.$lastLottoNumberContainer);
+    this.purchaseLottoContainer.render();
+  };
   };
 
   render = () => {
