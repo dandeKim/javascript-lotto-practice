@@ -47,4 +47,19 @@ const isValidLastLottoNumbers = ($input, numberList) => {
   return isUniqueNumberList && isValidLength && isValidNumber;
 };
 
-export { isVaildPurchaseAmount, isValidLastLottoNumbers };
+const isValidBonusNumber = ($input, number, lastLottoNumberList) => {
+  const isValidNumber = isValidLottoNumber([number]);
+  const isDuplicatedNumber = lastLottoNumberList.includes(number);
+
+  if (!isValidNumber) {
+    showAlertMessage($input, ALERT.INVALID_LAST_LOTTO_NUMBER);
+  }
+
+  if (isDuplicatedNumber) {
+    showAlertMessage($input, ALERT.INVALID_BONUS_NUMBER);
+  }
+
+  return isValidNumber && !isDuplicatedNumber;
+};
+
+export { isVaildPurchaseAmount, isValidLastLottoNumbers, isValidBonusNumber };
