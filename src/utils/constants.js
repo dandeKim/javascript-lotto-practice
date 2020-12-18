@@ -1,0 +1,8 @@
+const NUMBER = {
+  LOTTO_PRICE: 1000,
+  MIN_LOTTO_NUMBER: 1,
+  MAX_LOTTO_NUMBER: 45,
+  TOTAL_LOTTO_LENGTH: 6,
+};
+
+export { NUMBER };
