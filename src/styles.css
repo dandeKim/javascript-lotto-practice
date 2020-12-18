@@ -6,6 +6,10 @@ form {
   padding: 10px 0;
 }
 
+ul {
+  padding: 0;
+}
+
 #purchased-lotto-container,
 #last-lotto-number-container,
 #last-bonus-number-container,
@@ -18,4 +22,14 @@ form {
 #last-bonus-number-container.active,
 #lotto-game-result.active {
   display: block;
+}
+
+#purchased-lotto-container li {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  background-color: #efefef;
 }
