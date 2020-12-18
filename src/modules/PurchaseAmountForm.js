@@ -1,3 +1,4 @@
+import { NUMBER } from "../utils/constants.js";
 import { isVaildPurchaseAmount } from "../utils/validations.js";
 
 class PurchaseAmountForm {
@@ -15,7 +16,7 @@ class PurchaseAmountForm {
       return;
     }
 
-    this.setLottoAmount(amount);
+    this.setLottoAmount(amount / NUMBER.LOTTO_PRICE);
   };
 
   render = () => {
